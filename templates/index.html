@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <script src="https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WARP Clash 订阅地址生成器</title>
+    <title>WARP Clash Subscription Address Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -99,21 +99,21 @@
 <div id="toast" class="toast"></div>
 
 <div class="warning" style="display: none" id="ip-warn">
-    <p>您的域名看起来似乎是本地域名，这意味着您的订阅地址<b>无法</b>被局域网及公网访问。</p>
+    <p>Your domain seems to be a local domain, which means your subscription address <b>cannot</b> be accessed by local area network and public network.</p>
 </div>
 
-<h1>WARP Clash 订阅地址生成器</h1>
+<h1>WARP Clash Subscription Address Generator</h1>
 <form action="javascript:generateLink()">
     <div>
         <label for="passwordInput"></label>
-        <input type="password" name="password" id="passwordInput" placeholder="输入您的SECRET_KEY">
+        <input type="password" name="password" id="passwordInput" placeholder="Enter your SECRET_KEY">
     </div>
     <div>
         <label>
-            <input type="checkbox" id="alwaysBest" onchange="generateLink()"> 始终选择最优节点
+            <input type="checkbox" id="alwaysBest" onchange="generateLink()"> Always choose the best node
         </label>
         <label>
-            <input type="checkbox" id="randomName" onchange="generateLink()" checked> 随机节点名称
+            <input type="checkbox" id="randomName" onchange="generateLink()" checked> Random node name
         </label>
         <label>
             <input type="checkbox" id="ipv6" onchange="generateLink()"> IPv6
@@ -121,16 +121,16 @@
     </div>
     <div>
         <br/>
-        <label for="proxyFormat">订阅格式：</label>
+        <label for="proxyFormat">Subscription format:</label>
         <select id="proxyFormat" onchange="generateLink()">
-            <option value="full">完整订阅</option>
+            <option value="full">Full subscription</option>
             <option value="with_groups">Proxies & Proxy Groups</option>
-            <option value="only_proxies">仅包含Proxies</option>
+            <option value="only_proxies">Proxies Only</option>
         </select>
     </div>
 </form>
 <center>
-    <h2>自动判断订阅类型</h2>
+    <h2>Auto-detect Subscription Type</h2>
     <textarea id="autoSubscriptionLink" rows="3" readonly onclick="copyText('autoSubscriptionLink')"></textarea>
     <div id="qrcode_auto"></div>
     <h2>Clash</h2>
@@ -149,8 +149,8 @@
     <h2>Wireguard</h2>
     <textarea id="WireguardLink" rows="3" readonly onclick="copyText('WireguardLink')"></textarea>
     <div id="qrcode_wg"></div>
-    <h2>账户信息</h2>
-    <a href="#" title="账户信息" target="_blank" id="AccountLink">点击查看</a>
+    <h2>Account Information</h2>
+    <a href="#" title="Account Information" target="_blank" id="AccountLink">Click here to view</a>
 </center>
 
 <footer>
@@ -220,7 +220,7 @@
         const textarea = document.getElementById(elem);
         textarea.select();
         document.execCommand('copy');
-        showToast("已复制到剪贴板");
+        showToast("Copied to clipboard");
     }
 
 
